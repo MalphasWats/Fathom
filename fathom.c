@@ -115,12 +115,9 @@ void fathom(void)
             //TODO: make into function
             for(uint8_t dy=player.y+12 ; dy<player.y+vy+12 ; dy++)
             {
-                //draw_int(dy, 4, 0, 0);
-                //draw();
                 if (buffer[ (dy>>3) * SCREEN_WIDTH + player.x ] & (1 << (dy&7)))
                 {
                     vy = 0;
-                    //dy -= 1;
                     player.y = dy-12;
                     break;
                 }
@@ -131,8 +128,6 @@ void fathom(void)
             if (player.y > SCREEN_HEIGHT-12)
                 player.y = SCREEN_HEIGHT-12;
         }
-
-        //draw_int(vy, 3, 0, 0);
 
         draw_sprite(&player);
 
