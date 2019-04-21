@@ -20,6 +20,7 @@ C_FLAGS    = -Wl,--gc-sections -Wl,--relax -ffunction-sections -fdata-sections -
 # fuse settings:
 # use http://www.engbedded.com/fusecalc
 FUSES      = -U lfuse:w:0xfe:m -U hfuse:w:0xd9:m -U efuse:w:0xff:m  # External Xtal
+#FUSES      = -U lfuse:w:0xc2:m -U hfuse:w:0xd9:m -U efuse:w:0xff:m  # 8mhz
 
 AVRDUDE = avrdude $(PROGRAMMER) -p$(DEVICE)
 COMPILE = avr-gcc -Wall -O3 -mmcu=$(DEVICE) $(C_FLAGS) -I$(GLYPHLIB)
